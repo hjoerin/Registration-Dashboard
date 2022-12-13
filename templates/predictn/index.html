@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Prediciting FTIAC Enrollment</title>
+	<meta charset="utf-8">
+	<meta name='viewport' content="width=device-width, initial-scale=1">
+<style>
+*	{
+		box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header*/
+header {
+	background-color: #666;
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	color: white;
+}
+
+/* Style h1 */
+h1 {
+	font-size: 30px;
+}
+
+/* Create two columns/boxes floating next to each other */
+nav {
+	float: left;
+	width: 30%;
+	background: #ccc;
+	padding: 20px;
+}
+
+/* style the list inside menu */
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+article {
+	float: left;
+	padding: 20px;
+	width: 70%;
+	background-color: #f1f1f1;
+}
+
+/* clear floats after the columns */
+section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* style the footer */
+footer {
+	background-color: #167dde;
+	padding: 10px;
+	text-align: center;
+	color: whte;
+}
+
+</style>
+</head>
+<body>
+	<header>
+		<h2> Predicting FTIAC Enrollment</h2>
+	{% load static %}
+	</header>
+	
+	<section>
+		<nav>
+			<h2>Classes</h2>
+			<ul>
+				<li><a href='BIO_120'>BIO 120</a></li>
+				<li><a href='CHM_109'>CHM 109</a></li>
+				<li><a href='CHM_115'>CHM 115</a></li>
+				<li><a href='MTH_110'>MTH 110</a></li>
+				<li><a href='MTH_122'>MTH 122</a></li>
+				<li><a href='WRT_150'>WRT 150</a></li>
+				<li><a href='WRT_120'>WRT 120</a></li>
+				<li><a href='INT_100'>INT 100</a></li>
+			</ul>
+		</nav>
+		
+		<article>
+			<h1> We are predicting {{ y2 }} FTIACs enrolled in the first day of classes in Fall 2022 </h1>
+					{% autoescape off %}
+					{{ plot_div }}
+					{% endautoescape %}
+		</article>
+	</section>
+	
+	<footer>
+		<p>GVSU Capstone MTH 496 - 01 Fall 2022</p>
+	</footer>
+			
+	
+</body>
+</html>
